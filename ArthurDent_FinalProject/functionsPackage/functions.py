@@ -8,7 +8,7 @@
 # Brief Description of the assignment:
 
 # imports (ex: from functionPackage.functions import *)
-
+from cryptography.fernet import Fernet
 
 #ChatGPT used
 def decrypt_location(encrypted_data_file, english_file):
@@ -48,3 +48,13 @@ encrypted_data = [
 english_file_path = "UCEnglish.txt"
 decrypted_location = decrypt_location(encrypted_data, english_file_path)
 print("Decrypted location string:", decrypted_location)
+
+def decrypt_movie():
+    key = Fernet.generate_key()
+    f = Fernet("2tWgZTHycJHttRAQkazCO-Qr66EBdm1mW1-QgCcSzVs=")
+    token = "gAAAAABlTNM6E_sG85Z7exRFRBnvBhpDhL4rzknNKiPZGnjR_Zem2ZxvlzxwyyoyS3ixtb6Hz_REgEGhTKMWJzJkDy3Slqj49g=="
+    print(token)
+    decrypted_token = f.decrypt(token.encode()).decode()
+    print(decrypted_token)
+
+decrypt_movie()
