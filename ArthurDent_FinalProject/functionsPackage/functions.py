@@ -43,7 +43,7 @@ def decrypt_movie():
 
 def open_image(image_filename):
     try:
-        image_path = "../ArthurDentImage.jpg"  # Change this to the path of your image file
+        image_path = "../functionsPackage/ArthurDentImage.jpg"  # Change this to the path of your image file
         
         # Open image
         if not os.path.exists(image_path):
