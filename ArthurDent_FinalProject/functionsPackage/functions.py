@@ -9,52 +9,48 @@
 
 # imports (ex: from functionPackage.functions import *)
 from cryptography.fernet import Fernet
+from PIL import Image
+import os
 
-#ChatGPT used
-def decrypt_location(encrypted_data_file, english_file):
+def decrypt_location():
+    # Define the required variables within the function
+    encrypted_data_file = [
+        "39744", "28799", "27511", "17302", "5082", "31053", "22147", 
+        "103568", "21085", "105654", "23926", "23887", "940", "15378", 
+        "17514", "41519", "2756", "23926", "23887", "29212"
+    ] 
+    english_file = "../UCEnglish.txt"
 
+    # Perform decryption
     decrypted_string = ""
     with open(english_file, "r") as f:
         english_data = f.readlines()
     for index in encrypted_data_file:
         line_number = int(index)
         decrypted_string += english_data[line_number].strip() + " "
-    return decrypted_string.strip()
-
-# Example usage:
-encrypted_data = [
-
-    "39744",
-    "28799",
-    "27511",
-    "17302",
-    "5082",
-    "31053",
-    "22147",
-    "103568",
-    "21085",
-    "105654",
-    "23926",
-    "23887",
-    "940",
-    "15378",
-    "17514",
-    "41519",
-    "2756",
-    "23926",
-    "23887",
-    "29212"] 
-
-english_file_path = "UCEnglish.txt"
-decrypted_location = decrypt_location(encrypted_data, english_file_path)
-print("Decrypted location string:", decrypted_location)
+    decrypted_location = decrypted_string.strip()
+    
+    # Return the decrypted location
+    return decrypted_location
 
 def decrypt_movie():
     key = Fernet.generate_key()
     f = Fernet("2tWgZTHycJHttRAQkazCO-Qr66EBdm1mW1-QgCcSzVs=")
     token = "gAAAAABlTNM6E_sG85Z7exRFRBnvBhpDhL4rzknNKiPZGnjR_Zem2ZxvlzxwyyoyS3ixtb6Hz_REgEGhTKMWJzJkDy3Slqj49g=="
-    print(token)
+    print("Provided Token: ", token)
     decrypted_token = f.decrypt(token.encode()).decode()
-    print(decrypted_token)
+    print("Decrypted Token: ", decrypted_token)
 
-decrypt_movie()
+def open_image(image_filename):
+    try:
+        image_path = "../ArthurDentImage.JPG"  # Change this to the path of your image file
+        
+        # Open image
+        if not os.path.exists(image_path):
+            print("Error: Image path does not exist.")
+            return
+        image = Image.open(image_path)
+        rotated_image = image.rotate(-90, expand=True)
+        rotated_image.show()
+    except Exception as e:
+        print("Error:", e)
