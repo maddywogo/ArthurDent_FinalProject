@@ -5,7 +5,7 @@
 # Due Date: 4/23/2024
 # Course/Section: IS4010-002
 # Semester/Year: Spring 2024
-# Brief Description of the assignment:
+# Brief Description of the assignment: decodes the location of our picture and decodes our movie
 
 # imports (ex: from functionPackage.functions import *)
 from cryptography.fernet import Fernet
@@ -14,6 +14,13 @@ import os
 
 def decrypt_location():
     # Define the required variables within the function
+    
+    '''
+    This function decodes the location of our picture and decodes our movie
+    :Parameter: decrypted_location
+    :Return: location
+    '''
+   
     encrypted_data_file = [
         "39744", "28799", "27511", "17302", "5082", "31053", "22147", 
         "103568", "21085", "105654", "23926", "23887", "940", "15378", 
