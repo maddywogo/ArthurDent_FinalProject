@@ -7,15 +7,11 @@
 # Semester/Year: Spring 2024
 # Brief Description of the assignment: displays picture at statue, movie decryption 
 
-# imports (ex: from functionPackage.functions import *)
+# import statement
 from functionsPackage.functions import *
 
-'''
-    This function displays the picture at the state
-    :Parameter: ArthurDentImage.jpg
-    :Return: image file name
-    '''
 
+#Entry point
 if __name__ == "__main__":
     #Call the functions individually
     decrypt_movie()

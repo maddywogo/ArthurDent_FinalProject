@@ -7,7 +7,7 @@
 # Semester/Year: Spring 2024
 # Brief Description of the assignment: decodes the location of our picture and decodes our movie
 
-# imports (ex: from functionPackage.functions import *)
+# import statements
 from cryptography.fernet import Fernet
 from PIL import Image
 import os
@@ -17,8 +17,8 @@ def decrypt_location():
     
     '''
     This function decodes the location of our picture and decodes our movie
-    :Parameter: decrypted_location
-    :Return: location
+    :Parameter: NONE
+    :Return: decrypted_location
     '''
    
     encrypted_data_file = [
@@ -41,6 +41,11 @@ def decrypt_location():
     return decrypted_location
 
 def decrypt_movie():
+    '''
+    This function decrypts the code given to us using the fernet key provided
+    :Parameter: NONE
+    :Return: Movie title
+    '''
     key = Fernet.generate_key()
     f = Fernet("2tWgZTHycJHttRAQkazCO-Qr66EBdm1mW1-QgCcSzVs=")
     token = "gAAAAABlTNM6E_sG85Z7exRFRBnvBhpDhL4rzknNKiPZGnjR_Zem2ZxvlzxwyyoyS3ixtb6Hz_REgEGhTKMWJzJkDy3Slqj49g=="
@@ -49,6 +54,11 @@ def decrypt_movie():
     print("Decrypted Token: ", decrypted_token)
 
 def open_image(image_filename):
+    '''
+    This function displays the picture at the state
+    :Parameter: image file name
+    :Return: image display
+    '''
     try:
         image_path = "../functionsPackage/ArthurDentImage.jpg"  # Change this to the path of your image file
         
