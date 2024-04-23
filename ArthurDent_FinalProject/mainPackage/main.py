@@ -15,4 +15,4 @@ if __name__ == "__main__":
     decrypt_movie()
     decrypted_location = decrypt_location()
     print("Decrypted location string:", decrypted_location)
-    open_image("ArthurDentImage.JPG")
+    open_image("ArthurDentImage.jpg")

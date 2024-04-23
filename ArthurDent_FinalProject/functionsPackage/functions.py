@@ -19,7 +19,7 @@ def decrypt_location():
         "103568", "21085", "105654", "23926", "23887", "940", "15378", 
         "17514", "41519", "2756", "23926", "23887", "29212"
     ] 
-    english_file = "../UCEnglish.txt"
+    english_file = "../functionsPackage/UCEnglish.txt"
 
     # Perform decryption
     decrypted_string = ""
@@ -43,7 +43,7 @@ def decrypt_movie():
 
 def open_image(image_filename):
     try:
-        image_path = "../ArthurDentImage.JPG"  # Change this to the path of your image file
+        image_path = "../ArthurDentImage.jpg"  # Change this to the path of your image file
         
         # Open image
         if not os.path.exists(image_path):
