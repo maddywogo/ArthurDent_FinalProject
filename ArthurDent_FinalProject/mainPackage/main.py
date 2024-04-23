@@ -8,7 +8,11 @@
 # Brief Description of the assignment:
 
 # imports (ex: from functionPackage.functions import *)
-from functionsPackage.functions import decrypt_location
+from functionsPackage.functions import *
 
 if __name__ == "__main__":
-    print(decrypt_location("Decrypted location string:", decrypted_location))
+    #Call the functions individually
+    decrypt_movie()
+    decrypted_location = decrypt_location()
+    print("Decrypted location string:", decrypted_location)
+    open_image("ArthurDentImage.JPG")
